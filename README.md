@@ -24,3 +24,8 @@ To get the best result, you must enter the name of a city followed by the countr
 - "New York, US"
 
 You can also change the settings to get Fahrenheit degrees instead of Celsius, or to set the ```Dark Mode Theme``` if you want.
+
+## Check this video
+___
+
+[Download here](https://we.tl/t-Aq6PnVu75f) a short video recorded to show how the app works.
