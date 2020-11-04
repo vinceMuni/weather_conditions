@@ -48,3 +48,19 @@ Thumbs.db
 *.mov
 *.wmv
 
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+.packages
+pubspec.lock
+weather_conditions.iml
+.dart_tool/package_config.json
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/.filecache
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/app.dill
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/debug_android_application.stamp
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/flutter_assets.d
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/gen_localizations.stamp
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/kernel_snapshot.d
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/kernel_snapshot.stamp
+.dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/outputs.json
+build/
