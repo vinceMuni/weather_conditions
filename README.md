@@ -1,29 +1,21 @@
-# README #
+# Weather Conditions 
+An app made with Flutter to get weather forecasts for the next 5 days.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Getting started
+___
+For help getting started with Flutter, view the online [documentation](flutter.dev/docs).
+To run the app you must:
+- Download the project and open it in a IDE that supports Flutter (Android Studio/VS Code) 
+- Run ```flutter doctor``` in the terminal to check everything is working fine
+- Connect a device or open the simulator, then in the terminal run the command ```flutter run --debug```
+- The application will properly start in your device or simulator
 
-### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## How to use
+___
 
-### How do I get set up? ###
+The app can be used to check the weather forecast for the next 5 days typing the name of a city.
+To get the best result, you must enter the name of a city followed by the country code, as in the example below: 
+-- "New York, US"
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+You can also change the settings to get Fahrenheit degrees instead of Celsius, or to set the ```Dark Mode Theme``` if you want.
