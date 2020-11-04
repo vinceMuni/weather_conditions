@@ -12,6 +12,7 @@ class HomeController extends GetxController {
   final RxBool isLoading = false.obs;
   final RxBool isFahrenheit = false.obs;
   final RxBool isDarkMode = false.obs;
+  final RxString cityName = "".obs;
 
   final WeatherAPI weatherAPI;
 
@@ -39,6 +40,7 @@ class HomeController extends GetxController {
   /// Call Weather API to get 5 days weather forecast
   /// for the searched city
   void getForecasts() async {
+    if (cityTextController.text.isEmpty) return;
     if (isLoading.value) return;
 
     isLoading.value = true;
@@ -47,6 +49,7 @@ class HomeController extends GetxController {
       weatherForecasts.value = await weatherAPI.getWeatherForecasts(city,
           isFahrenheit: isFahrenheit.value);
       isLoading.value = false;
+      cityName.value = city;
     } catch (e) {
       isLoading.value = false;
       Get.snackbar("error".tr, "error_city".tr,

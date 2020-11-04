@@ -67,6 +67,16 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
+                Obx(() => Padding(
+                      padding: const EdgeInsets.only(
+                          top: 16.0, left: 16.0, right: 16.0),
+                      child: Expanded(
+                          child: AppText(
+                        controller.cityName.value,
+                        isBold: true,
+                        size: 24.sp,
+                      )),
+                    )),
                 Obx(
                   () => controller.isLoading.value
                       ? Padding(
@@ -83,7 +93,10 @@ class Home extends StatelessWidget {
                             return Container(
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
-                                child: ForecastWidget(forecast: forecast, isFahrenheit: controller.isFahrenheit.value),
+                                child: ForecastWidget(
+                                    forecast: forecast,
+                                    isFahrenheit:
+                                        controller.isFahrenheit.value),
                               ),
                             );
                           },
@@ -99,7 +112,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  /// Show settings bottomsheet to set units type and theme 
+  /// Show settings bottomsheet to set units type and theme
   void showSettings() {
     Get.bottomSheet(Card(
         child: Column(

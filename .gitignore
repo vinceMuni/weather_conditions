@@ -64,3 +64,4 @@ weather_conditions.iml
 .dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/kernel_snapshot.stamp
 .dart_tool/flutter_build/166d5bb4ccd975e85301cac0174ce650/outputs.json
 build/
+.dart_tool/
