@@ -99,6 +99,7 @@ class Home extends StatelessWidget {
     );
   }
 
+  /// Show settings bottomsheet to set units type and theme 
   void showSettings() {
     Get.bottomSheet(Card(
         child: Column(
@@ -108,7 +109,7 @@ class Home extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 16.0, left: 16.0),
           child: AppText(
-            "",
+            "settings".tr,
             isBold: true,
             size: 20.sp,
           ),

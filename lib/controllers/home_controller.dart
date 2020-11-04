@@ -15,15 +15,18 @@ class HomeController extends GetxController {
 
   final WeatherAPI weatherAPI;
 
+  final String isFahrenheitKey = "isFahrenheit";
+  final String isDarkModeKey = "isDarkMode";
+
   HomeController(this.weatherAPI);
 
   @override
   void onInit() async {
     await GetStorage.init();
     final box = GetStorage();
-    isFahrenheit.value = box.read("isFahrenheit")?? false;
-    isDarkMode.value = box.read("isDarkMode")?? false;
-    if(isDarkMode.value) Get.changeTheme(ThemeData.dark());
+    isFahrenheit.value = box.read(isFahrenheitKey) ?? false;
+    isDarkMode.value = box.read(isDarkModeKey) ?? false;
+    if (isDarkMode.value) Get.changeTheme(ThemeData.dark());
     super.onInit();
   }
 
@@ -56,16 +59,19 @@ class HomeController extends GetxController {
     }
   }
 
-  void changeUnits(){
+  ///Change units to request temperature in either celsius or fahrenheit degrees
+  void changeUnits() {
     isFahrenheit.toggle();
+    getForecasts();
     final box = GetStorage();
-    box.write("isFahrenheit", isFahrenheit.value);
+    box.write(isFahrenheitKey, isFahrenheit.value);
   }
 
-  void changeTheme(){
+  ///Change theme to show either a light or dark theme
+  void changeTheme() {
     isDarkMode.toggle();
     Get.changeTheme(isDarkMode.value ? ThemeData.dark() : ThemeData.light());
     final box = GetStorage();
-    box.write("isDarkMode", isDarkMode.value);
+    box.write(isDarkModeKey, isDarkMode.value);
   }
 }

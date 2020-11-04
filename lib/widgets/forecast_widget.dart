@@ -7,8 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForecastWidget extends StatelessWidget {
   final Forecast forecast;
+  final bool isFahrenheit;
 
-  const ForecastWidget({Key key, @required this.forecast}) : super(key: key);
+  const ForecastWidget(
+      {Key key, @required this.forecast, this.isFahrenheit = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class ForecastWidget extends StatelessWidget {
                   height: 40.h,
                 ),
                 Expanded(
-                                  child: Padding(
+                  child: Padding(
                     padding: const EdgeInsets.only(left: 4.0),
                     child: AppText(
                       "${GetUtils.capitalize(_getWeather().description)}",
@@ -46,22 +49,22 @@ class ForecastWidget extends StatelessWidget {
                     child: Column(
                   children: [
                     AppText(
-                      "${_getMinTemp()}°",
+                      "${_getMinTemp()}",
                       isBold: true,
                       size: 18.sp,
                     ),
-                    AppText("Min T.")
+                    AppText("min_t".tr)
                   ],
                 )),
                 Expanded(
                     child: Column(
                   children: [
                     AppText(
-                      "${_getMaxTemp()}°",
+                      "${_getMaxTemp()}",
                       isBold: true,
                       size: 18.sp,
                     ),
-                    AppText("Max T.")
+                    AppText("max_t".tr)
                   ],
                 ))
               ],
@@ -87,16 +90,26 @@ class ForecastWidget extends StatelessWidget {
   }
 
   String _getMinTemp() {
-    if (forecast.temp.min is double)
-      return forecast.temp.min.toStringAsFixed(0);
-    else
-      return forecast.temp.min.toString();
+    String minTemp = "";
+    if (forecast.temp.min is double) {
+      minTemp = forecast.temp.min.toStringAsFixed(0);
+    } else {
+      minTemp = forecast.temp.min.toString();
+    }
+    minTemp =
+        '$minTemp${isFahrenheit ? 'fahrenheit_degrees'.tr : 'celsius_degrees'.tr}';
+    return minTemp;
   }
 
   String _getMaxTemp() {
-    if (forecast.temp.max is double)
-      return forecast.temp.max.toStringAsFixed(0);
-    else
-      return forecast.temp.max.toString();
+    String maxTemp = "";
+    if (forecast.temp.max is double) {
+      maxTemp = forecast.temp.max.toStringAsFixed(0);
+    } else {
+      maxTemp = forecast.temp.max.toString();
+    }
+    maxTemp =
+        '$maxTemp${isFahrenheit ? 'fahrenheit_degrees'.tr : 'celsius_degrees'.tr}';
+    return maxTemp;
   }
 }
