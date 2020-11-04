@@ -67,16 +67,16 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-                Obx(() => Padding(
+                Obx(
+                  () => Padding(
                       padding: const EdgeInsets.only(
                           top: 16.0, left: 16.0, right: 16.0),
-                      child: Expanded(
-                          child: AppText(
+                      child: AppText(
                         controller.cityName.value,
                         isBold: true,
                         size: 24.sp,
                       )),
-                    )),
+                ),
                 Obx(
                   () => controller.isLoading.value
                       ? Padding(
