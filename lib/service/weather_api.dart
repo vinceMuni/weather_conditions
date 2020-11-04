@@ -27,7 +27,7 @@ class WeatherAPI {
       QUERY_PARAM: city,
       COUNT_PARAM: MAX_DAYS,
       UNITS: isFahrenheit ? IMPERIAL : METRIC,
-      LANGUAGE: Get.locale.countryCode.toLowerCase(),
+      LANGUAGE: Get.locale.languageCode.toLowerCase(),
       APP_ID: API_KEY
     });
     if (forecastResponse.statusCode == 200 && forecastResponse.data != null) {
