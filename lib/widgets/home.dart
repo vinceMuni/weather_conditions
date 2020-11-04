@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
                             return Container(
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
-                                child: ForecastWidget(forecast: forecast),
+                                child: ForecastWidget(forecast: forecast, isFahrenheit: controller.isFahrenheit.value),
                               ),
                             );
                           },
