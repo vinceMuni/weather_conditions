@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialBinding: InitialBindings(),
       debugShowCheckedModeBanner: false,
-      //locale: DevicePreview.of(context).locale,
-      //builder: DevicePreview.appBuilder,
+      locale: DevicePreview.of(context).locale,
+      builder: DevicePreview.appBuilder,
       fallbackLocale: Locale('en', 'US'),
       translations: AppTranslations(),
       localizationsDelegates: [
